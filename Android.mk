@@ -20,6 +20,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),rpi4))
+
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
@@ -53,3 +55,5 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
